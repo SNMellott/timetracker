@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'customers/index'
+  get 'task_entry/index'
   get 'sessions/new'
   get 'users/new'
   root 'static_pages#home'
@@ -9,4 +11,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
+  resources :customers
+  resources :tasks
+  resources :task_entries
+  resources :projects
 end
