@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_one :project
-  has_one :user
-  belongs_to :task_entry
+  belongs_to :project
+  has_many :users
+  has_many :task_entries
 end
