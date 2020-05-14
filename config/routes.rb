@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'customers/index'
-  get 'task_entry/index'
   get 'sessions/new'
   get 'users/new'
   root 'static_pages#home'

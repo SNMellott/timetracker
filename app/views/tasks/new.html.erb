@@ -1,0 +1,21 @@
+<% provide(:title, 'New Task') %>
+<h1>Add A Task</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@task) do |f| %>
+
+      <%= f.label "User" %>
+      <%= f.collection_select(:user_id, User.all, :id, :username) %>
+
+      <%= f.label :task_name %>
+      <%= f.text_field :task_name, class: 'form-control' %>
+
+      <%= f.label "Select Project" %>
+      <%= f.collection_select(:project_id, Project.all, :id, :project_name) %>
+
+      <%= f.submit "Add Task", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

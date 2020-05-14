@@ -1,0 +1,18 @@
+<% provide(:title, 'Tasks') %>
+<h1>Tasks</h1>
+
+<center>
+  <button type="button" class="btn btn-dark">
+    <%= link_to "New Task", new_task_path %>
+  </button>
+</center>
+
+<h2>All Tasks</h2>
+
+<ul class="users">
+  <% @task.each do |task| %>
+    <li>
+      <%= link_to task.task_name, task %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,21 @@
+<% provide(:title, 'New Track Time') %>
+<h1>Track your Time</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@task_entry) do |f| %>
+
+      <%= f.label "Select Task" %>
+      <%= f.collection_select(:task_id, Task.all, :id, :task_name) %>
+
+      <%= f.label "Notes" %>
+      <%= f.text_area :note, class: 'form-control' %>
+
+      <%= f.label "Time" %>
+      <%= f.datetime_field :start_time, class: 'form-control' %>
+
+      <%= f.submit "Start Time", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

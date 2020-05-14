@@ -2,9 +2,19 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= @customer.company %>
-      </h1>
+      <center>
+        <h1>
+          <%= @customer.company %>
+        </h1>
+        <h2>
+          <%= @customer.address %>
+          <br>
+            <%= @customer.city %>,
+            <%= @customer.state %>
+            <%= @customer.zip %>
+          <br>
+        </h2>
+      </center>  
     </section>
   </aside>
 </div>
