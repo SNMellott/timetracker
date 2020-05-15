@@ -6,3 +6,13 @@
     <%= link_to "New Time Tracking", new_task_entry_path %>
   </button>
 </center>
+
+<h2>All Task Entries</h2>
+
+<ul class="users">
+  <% @task_entry.each do |task_entry| %>
+    <li>
+      <%= link_to task_entry.task_id, task_entry %>
+    </li>
+  <% end %>
+</ul>

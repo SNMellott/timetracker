@@ -28,17 +28,18 @@ class TaskEntriesController < ApplicationController
 
   def update
     @task_entry = TaskEntry.find(params[:id])
-    if @task_entry.update(task_entry_params)
-      redirect_to @task_entry
+    if @task_entry.stop_time(presence: true)
+      @task_entry.duration = (params[:stop_time] - params[:start_time])
+      @task_entry.duration.save!
     else
       render 'edit'
-    end 
+    end
   end
 
   private
 
   def task_entry_params
-    params.require(:task_entry).permit(:task_id, :duration, :note, :start_time)
+    params.require(:task_entry).permit(:task_id, :duration, :note, :start_time, :stop_time)
   end
 
 end

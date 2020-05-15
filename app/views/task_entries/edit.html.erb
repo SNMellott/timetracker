@@ -1,5 +1,5 @@
-<% provide(:title, 'Stop Track Time') %>
-<h1>Track your Time</h1>
+<% provide(:title, 'Update Track Time') %>
+<h1>Update your Time</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -11,7 +11,13 @@
       <%= f.label "Notes" %>
       <%= f.text_area :note, class: 'form-control' %>
 
-      <%= f.submit :updated_at, class: "btn btn-primary" %>
+      <%= f.label "Start Time" %>
+      <%= f.datetime_field :start_time, class: 'form-control' %>
+
+      <%= f.label "Stop Time" %>
+      <%= f.datetime_field :stop_time, class: 'form-control' %><br>
+
+      <%= f.submit "Update Tracking", class: "btn btn-primary" %>
 
     <% end %>
   </div>

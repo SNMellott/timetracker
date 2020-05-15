@@ -1,7 +1,4 @@
 class TaskEntry < ApplicationRecord
-  has_one :task
+  belongs_to :task
 
-  def duration
-  end
-  
 end

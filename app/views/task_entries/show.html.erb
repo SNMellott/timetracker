@@ -1,1 +1,20 @@
-This is for later. 
+<% provide(:title, @task_entry.task_id) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @task_entry.task_id %>
+      </h1>
+      <h2>
+        <%= @task_entry.task.task_name %><br>
+        <%= @task_entry.note %><br>
+        <%= @task_entry.start_time %><br>
+        <%= @task_entry.stop_time %><br>
+        <%= @task_entry.duration %><br>
+        <button type="button" class="btn btn-dark">
+          <%= link_to "Update Tracking", edit_task_entry_path %>
+        </button>
+      </h2>
+    </section>
+  </aside>
+</div>
