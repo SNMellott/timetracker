@@ -28,9 +28,9 @@ class TaskEntriesController < ApplicationController
 
   def update
     @task_entry = TaskEntry.find(params[:id])
-    if @task_entry.stop_time(presence: true)
-      @task_entry.duration = (params[:stop_time] - params[:start_time])
-      @task_entry.duration.save!
+    #task_entry_params[:duration] = stop_time - start_time
+    if @task_entry.update(task_entry_params)
+      redirect_to @task_entry
     else
       render 'edit'
     end
